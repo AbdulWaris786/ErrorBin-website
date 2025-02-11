@@ -1,21 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-02-10',
+  devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
   ],
-  css: [
-    '~/assets/css/main.css'
-  ],
   app: {
     head: {
-      title: 'My Nuxt Project',
+      title: 'ErrorBin',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ]
     }
   },
-  // Development settings
-  devtools: { enabled: true }
+  components: {
+    global: true,
+    dirs: ['~/components/layout']
+  }
 })
